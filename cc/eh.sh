@@ -62,12 +62,6 @@ http_port 0.0.0.0:3128
 http_port 0.0.0.0:3129
 http_port 0.0.0.0:8000
 acl all src 0.0.0.0/0
-coredump_dir /var/spool/squid3
-refresh_pattern ^ftp: 1440 20% 10080
-refresh_pattern ^gopher: 1440 0% 1440
-refresh_pattern -i (/cgi-bin/|\?) 0 0% 0
-refresh_pattern . 0 20% 4320
-visible_hostname daybreakersx
 END
 sed -i $MYIP2 /etc/squid/squid.conf;
 service squid restart
